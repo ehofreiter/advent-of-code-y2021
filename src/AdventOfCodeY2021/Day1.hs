@@ -1,11 +1,17 @@
 module AdventOfCodeY2021.Day1
   ( Depth(..)
   , Diff(..)
-  , run
+  , runPart1
   ) where
 
-run :: FilePath -> IO Int
-run filePath = do
+import Control.Applicative (ZipList(..))
+
+--
+-- Part 1
+--
+
+runPart1 :: FilePath -> IO Int
+runPart1 filePath = do
   depths <- readDepths filePath
   pure (countIncreases $ diffs depths)
 
@@ -41,3 +47,31 @@ diffs depths = case depths of
 countIncreases :: [Diff] -> Int
 countIncreases = length . filter (> 0) . fmap unDiff
 
+--
+-- Part 2
+--
+
+runPart2 :: FilePath -> IO Int
+runPart2 filePath = do
+  depths <- readDepths filePath
+  let wds = windowDepth <$> applyWindow depths
+  pure (countIncreases $ diffs wds)
+
+data Window = Window Depth Depth Depth
+  deriving Show
+
+windowDepth :: Window -> Depth
+windowDepth (Window (Depth x) (Depth y) (Depth z)) = Depth (x + y + z)
+
+-- >>> applyWindow . fmap Depth $ [10, 15, 3, 15]
+-- [Window (Depth {unDepth = 3}) (Depth {unDepth = 15}) (Depth {unDepth = 10}),Window (Depth {unDepth = 15}) (Depth {unDepth = 3}) (Depth {unDepth = 15})]
+applyWindow :: [Depth] -> [Window]
+applyWindow depths = case depths of
+  [] -> []
+  [x] -> []
+  [x,y] -> []
+  xs -> getZipList
+    $   Window
+    <$> ZipList xs
+    <*> ZipList (tail xs)
+    <*> ZipList (tail $ tail xs)
