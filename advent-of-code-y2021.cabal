@@ -27,6 +27,9 @@ library
   exposed-modules:
       AdventOfCodeY2021.Common
       AdventOfCodeY2021.Day1
+      AdventOfCodeY2021.Day2
+      AdventOfCodeY2021.Day3
+      AdventOfCodeY2021.Day3Part2
   other-modules:
       Paths_advent_of_code_y2021
   hs-source-dirs:
