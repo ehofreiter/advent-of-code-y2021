@@ -1,6 +1,9 @@
-module AdventOfCode2021.Common
-  ( run
+module AdventOfCodeY2021.Common
+  ( readInputs
   ) where
 
-run :: IO ()
-run = putStrLn "Nothing here yet!"
+readInputs :: FilePath -> (String -> a) -> IO [a]
+readInputs filePath f = do
+  fileContents <- readFile filePath
+  pure (f <$> lines fileContents)
+
