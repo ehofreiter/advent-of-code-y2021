@@ -26,10 +26,25 @@ readInts :: String -> [Int]
 readInts = map read . splitOn ","
 
 totalCost :: Int -> [Int] -> Int
-totalCost target sources = sum $ map (cost target) sources
+--totalCost target sources = sum $ map (cost target) sources
+totalCost target sources = sum $ map (cost2 target) sources
+--totalCost target sources = sum $ map (cost2slow target) sources
 
--- This is part 2, part 1 was just abs (target - source)
+-- Part 1 cost function
 cost :: Int -> Int -> Int
-cost target source = (n * (n + 1)) `div` 2
+cost target source = abs (target - source)
+
+-- Part 2 cost function
+cost2 :: Int -> Int -> Int
+cost2 target source = (n * (n + 1)) `div` 2
+  where
+    n = abs (target - source)
+
+-- Was Part 2 an efficiency trap?
+-- Maybe the more straightforward approach of actually performing the sum 1 + 2
+-- + ... + n makes it too slow? Let's try it with the below cost function.
+-- Result: It's pretty slow, but still solved it in less than a minute.
+cost2slow :: Int -> Int -> Int
+cost2slow target source = sum [1..n]
   where
     n = abs (target - source)
