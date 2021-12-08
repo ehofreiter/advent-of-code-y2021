@@ -34,6 +34,8 @@ library
       AdventOfCodeY2021.Day4Part2
       AdventOfCodeY2021.Day5
       AdventOfCodeY2021.Day6
+      AdventOfCodeY2021.Day7
+      AdventOfCodeY2021.Day8
   other-modules:
       Paths_advent_of_code_y2021
   hs-source-dirs:
