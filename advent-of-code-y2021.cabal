@@ -28,6 +28,7 @@ library
       AdventOfCodeY2021.Common
       AdventOfCodeY2021.Day1
       AdventOfCodeY2021.Day10
+      AdventOfCodeY2021.Day11
       AdventOfCodeY2021.Day2
       AdventOfCodeY2021.Day3
       AdventOfCodeY2021.Day3Part2
