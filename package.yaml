@@ -22,10 +22,12 @@ description:         Please see the README on GitHub at <https://github.com/gith
 dependencies:
 - base >= 4.7 && < 5
 - containers
+- indexed-traversable
 - lens
 - linear
 - parsec
 - split
+- vector
 
 library:
   source-dirs: src

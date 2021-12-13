@@ -3,4 +3,4 @@ module Main where
 import AdventOfCodeY2021.Common
 
 main :: IO ()
-main = run
+main = print "Nothing to see here."
