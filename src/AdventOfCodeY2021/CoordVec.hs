@@ -4,6 +4,7 @@
 
 module AdventOfCodeY2021.CoordVec
   ( CoordVec
+  , Coord 
   , fromLists
   , toLists
   , toList
