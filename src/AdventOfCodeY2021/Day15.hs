@@ -27,8 +27,8 @@ runWith filePath = do
       (l, pm) = iterate' (stepBests rm) initState !! (maxX+maxY)
   --mapM_ print (toLists rm)
   --print $ chunksOf 100 $ last $ toLists rm
-  print (fst $ pm Map.! (maxX,maxY))
-  pure (rm, l, pm)
+  print (fst $ pm Map.! (maxX,maxY)) -- takes approx 3 minutes to run
+  --pure (rm, l, pm)
 
 type PM = Map.Map Coord Path -- best path to this coord
 

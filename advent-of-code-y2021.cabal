@@ -17,7 +17,6 @@ license-file:   LICENSE
 build-type:     Simple
 extra-source-files:
     README.md
-    ChangeLog.md
 
 source-repository head
   type: git
@@ -35,6 +34,13 @@ library
       AdventOfCodeY2021.Day13
       AdventOfCodeY2021.Day14
       AdventOfCodeY2021.Day15
+      AdventOfCodeY2021.Day15Refined
+      AdventOfCodeY2021.Day16
+      AdventOfCodeY2021.Day17
+      AdventOfCodeY2021.Day17Refined
+      AdventOfCodeY2021.Day18
+      AdventOfCodeY2021.Day18Refined
+      AdventOfCodeY2021.Day19
       AdventOfCodeY2021.Day2
       AdventOfCodeY2021.Day3
       AdventOfCodeY2021.Day3Part2
@@ -57,6 +63,7 @@ library
     , linear
     , parsec
     , split
+    , time
     , vector
   default-language: Haskell2010
 
@@ -76,6 +83,7 @@ executable advent-of-code-y2021-exe
     , linear
     , parsec
     , split
+    , time
     , vector
   default-language: Haskell2010
 
@@ -96,5 +104,6 @@ test-suite advent-of-code-y2021-test
     , linear
     , parsec
     , split
+    , time
     , vector
   default-language: Haskell2010
