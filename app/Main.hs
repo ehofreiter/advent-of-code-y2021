@@ -1,6 +1,10 @@
 module Main where
 
-import AdventOfCodeY2021.Common
+import System.Environment
+
+import AdventOfCodeY2021.Day19
 
 main :: IO ()
-main = print "Nothing to see here."
+main = do
+  args <- getArgs
+  runWith (head args)

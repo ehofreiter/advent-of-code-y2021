@@ -27,6 +27,7 @@ dependencies:
 - linear
 - parsec
 - split
+- time
 - vector
 
 library:
