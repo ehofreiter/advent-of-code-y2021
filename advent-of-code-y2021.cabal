@@ -47,6 +47,7 @@ library
       AdventOfCodeY2021.Day21Part2
       AdventOfCodeY2021.Day22
       AdventOfCodeY2021.Day22Part2
+      AdventOfCodeY2021.Day23
       AdventOfCodeY2021.Day3
       AdventOfCodeY2021.Day3Part2
       AdventOfCodeY2021.Day4
@@ -56,12 +57,15 @@ library
       AdventOfCodeY2021.Day7
       AdventOfCodeY2021.Day8
       AdventOfCodeY2021.Day9
+      AdventOfCodeY2021.Leaderboard
   other-modules:
       Paths_advent_of_code_y2021
   hs-source-dirs:
       src
   build-depends:
-      base >=4.7 && <5
+      aeson
+    , base >=4.7 && <5
+    , bytestring
     , containers
     , indexed-traversable
     , lens
@@ -81,7 +85,9 @@ executable advent-of-code-y2021-exe
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       advent-of-code-y2021
+    , aeson
     , base >=4.7 && <5
+    , bytestring
     , containers
     , indexed-traversable
     , lens
@@ -102,7 +108,9 @@ test-suite advent-of-code-y2021-test
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       advent-of-code-y2021
+    , aeson
     , base >=4.7 && <5
+    , bytestring
     , containers
     , indexed-traversable
     , lens
